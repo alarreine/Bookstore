@@ -25,8 +25,8 @@
                     <a class="dropdown-toggle" uib-dropdown-toggle href="" id="entity-menu">
                         <span>
                             <span class="glyphicon glyphicon-th-list"></span>
-                            <span class="hidden-sm" data-translate="global.menu.entities.main">
-                                Entities
+                            <span class="hidden-sm">
+                                Options
                             </span>
                             <b class="caret"></b>
                         </span>
@@ -34,26 +34,20 @@
                     <ul class="dropdown-menu" uib-dropdown-menu>
                         <li ui-sref-active="active">
                                 <a ui-sref="author" ng-click="vm.collapseNavbar()">
-                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;
                                     <span data-translate="global.menu.entities.author">Author</span>
                                 </a>
                             </li>
                         <li ui-sref-active="active">
                                 <a ui-sref="book" ng-click="vm.collapseNavbar()">
-                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span class="glyphicon glyphicon-book"></span>&nbsp;
                                     <span data-translate="global.menu.entities.book">Book</span>
                                 </a>
                             </li>
                         <li ui-sref-active="active">
-                                <a ui-sref="cart" ng-click="vm.collapseNavbar()">
-                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
-                                    <span data-translate="global.menu.entities.cart">Cart</span>
-                                </a>
-                            </li>
-                        <li ui-sref-active="active">
                                 <a ui-sref="cart-to-books" ng-click="vm.collapseNavbar()">
-                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
-                                    <span data-translate="global.menu.entities.cartToBooks">Cart To Books</span>
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;
+                                    <span>My Cart</span>
                                 </a>
                             </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
@@ -121,6 +115,12 @@
                             <a ui-sref="user-management" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-user"></span>&nbsp;
                                 <span data-translate="global.menu.admin.userManagement">User management</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active">
+                            <a ui-sref="cart" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                <span data-translate="global.menu.entities.cart">Cart Management</span>
                             </a>
                         </li>
                         <li ui-sref-active="active">

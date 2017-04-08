@@ -4,12 +4,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="cart-to-books.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span  data-translate="bookstoreApp.cartToBooks.home.createLabel">
-                        Create new Cart To Books
-                    </span>
-                </button>
             </div>
         </div>
     </div>
@@ -18,37 +12,24 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr>
-                    <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="bookstoreApp.cartToBooks.cartId">Cart Id</span></th>
-                    <th><span data-translate="bookstoreApp.cartToBooks.bookId">Book Id</span></th>
+                    <th><span>Item No.</span></th>
+                    <th><span>Book</span></th>
+                    <th><span>Title</span></th>
+                    <th><span>Price</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="cartToBooks in vm.cartToBooks track by cartToBooks.id">
-                    <td><a ui-sref="cart-to-books-detail({id:cartToBooks.id})">{{cartToBooks.id}}</a></td>
-                    <td>{{cartToBooks.cartId}}</td>
-                    <td>{{cartToBooks.bookId}}</td>
+                <tr ng-repeat="book in vm.books track by book.id">
+                    <td><a ui-sref="cart-to-book-detail({id:cartToBook.id})">{{$index + 1}}</a></td>
+                    <td>
+                        <img data-ng-src="{{'data:' + book.photoContentType + ';base64,' + book.image}}" style="max-height: 100px;" ng-if="book.image"/> {{byteSize(book.image)}}
+                    </td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.price}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="cart-to-books-detail({id:cartToBooks.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="cart-to-books.edit({id:cartToBooks.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="cart-to-books.delete({id:cartToBooks.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
+                            
                         </div>
                     </td>
                 </tr>

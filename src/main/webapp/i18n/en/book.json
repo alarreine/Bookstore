@@ -4,7 +4,8 @@
             "home": {
                 "title": "Books",
                 "createLabel": "Create a new Book",
-                "createOrEditLabel": "Create or edit a Book"
+                "createOrEditLabel": "Create or edit a Book",
+                "addToCartLabel": "Successfully added to cart"
             },
             "created": "A new Book is created with identifier {{ param }}",
             "updated": "A Book is updated with identifier {{ param }}",
@@ -19,7 +20,7 @@
             "price": "Price",
             "isbn": "Isbn",
             "quantity": "Quantity",
-            "image": "Image",
+            "image": "Photo",
             "author": "Author"
         }
     }
