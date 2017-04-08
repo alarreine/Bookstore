@@ -1,0 +1,22 @@
+{
+    "bookstoreApp": {
+        "cartToBooks" : {
+            "home": {
+                "title": "CartToBooks",
+                "createLabel": "Créer un nouveau Cart To Books",
+                "createOrEditLabel": "Créer ou éditer un Cart To Books"
+            },
+            "created": "Un nouveau Cart To Books a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Cart To Books avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Cart To Books avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Cart To Books {{ id }} ?"
+            },
+            "detail": {
+                "title": "Cart To Books"
+            },
+            "cartId": "Cart Id",
+            "bookId": "Book Id"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+<div>
+    <h2 data-translate="bookstoreApp.book.home.title">Books</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="book.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="bookstoreApp.book.home.createLabel">
+                        Create new Book
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="bookstoreApp.book.title">Title</span></th>
+                    <th><span data-translate="bookstoreApp.book.price">Price</span></th>
+                    <th><span data-translate="bookstoreApp.book.isbn">Isbn</span></th>
+                    <th><span data-translate="bookstoreApp.book.quantity">Quantity</span></th>
+                    <th><span data-translate="bookstoreApp.book.image">Image</span></th>
+                    <th><span data-translate="bookstoreApp.book.author">Author</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="book in vm.books track by book.id">
+                    <td><a ui-sref="book-detail({id:book.id})">{{book.id}}</a></td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.isbn}}</td>
+                    <td>{{book.quantity}}</td>
+                    <td>
+                        <a ng-if="book.image" ng-click="vm.openFile(book.imageContentType, book.image)">
+                            <img data-ng-src="{{'data:' + book.imageContentType + ';base64,' + book.image}}" style="max-height: 30px;" alt="book image"/>
+                        </a>
+                        <span ng-if="book.image">{{book.imageContentType}}, {{vm.byteSize(book.image)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="author-detail({id:book.author.id})">{{book.author.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="book-detail({id:book.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="book.edit({id:book.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="book.delete({id:book.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cartId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "bookId",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170408133942",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "cart_to_books",
+    "pagination": "no"
+}

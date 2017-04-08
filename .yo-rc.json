@@ -33,6 +33,14 @@
     "languages": [
       "en",
       "fr"
-    ]
+    ],
+    "appsFolders": [
+      "Bookstore"
+    ],
+    "directoryPath": "../",
+    "jwtSecretKey": "bab6f69484bbeaf58f8d67146f26e521233ea42a",
+    "dockerRepositoryName": "alarreine/bookstore",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default"
   }
 }

@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cart"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170408133811",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "cart",
+    "pagination": "no"
+}
