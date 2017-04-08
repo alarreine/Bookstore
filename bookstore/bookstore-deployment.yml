@@ -29,11 +29,11 @@ spec:
     spec:
       containers:
       - name: bookstore-app
-        image: alarreine/bookstore:v1
+        image: alarreine/bookstore:v2
         imagePullPolicy: IfNotPresent
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: dev
+          value: prod
         - name: SPRING_DATASOURCE_URL
           value: jdbc:postgresql://localhost:5432/bookstore?useUnicode=true&characterEncoding=utf8&useSSL=false
         - name: POSTGRES_USER
