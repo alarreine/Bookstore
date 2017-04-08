@@ -1,0 +1,12 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+            ng-click="vm.clear()">&times;</button>
+        <h4 align="center" class="modal-title" id="myBookLabel">Do you want to add this book to cart?</h4>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-md" align="center" data-dismiss="modal" ng-click="vm.save()" margin="auto">
+            <span class="glyphicon glyphicon-ok"></span>&nbsp;<span>OK</span>
+        </button>
+    </div>
+</form>

@@ -6,11 +6,11 @@
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
-                "main": "Entities",
-                "author": "Author",
-                "book": "Book",
-                "cart": "Cart",
-                "cartToBooks": "Cart To Books",
+                "main": "Options",
+                "author": "Authors",
+                "book": "Books",
+                "cart": "Cart Management",
+                "cartToBooks": "My Cart",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -92,6 +92,7 @@
             "edit": "Edit",
             "open": "Open",
             "save": "Save",
+            "addToCart": "Buy",
             "view": "View"
         },
         "detail": {

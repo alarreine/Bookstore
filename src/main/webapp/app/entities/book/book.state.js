@@ -92,7 +92,7 @@
             parent: 'book',
             url: '/new',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -125,7 +125,7 @@
             parent: 'book',
             url: '/{id}/edit',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
@@ -146,11 +146,36 @@
                 });
             }]
         })
+        .state('book.addToCart', {
+        parent: 'book',
+        url: '/{id}/addToCart',
+        data: {
+        authorities: ['ROLE_USER']
+        },
+        onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                  $uibModal.open({
+                                 templateUrl: 'app/entities/book/book-addToCart.html',
+                                 controller: 'BookAddToCartController',
+                                 controllerAs: 'vm',
+                                 backdrop: 'static',
+                                 size: 'sm',
+                                 resolve: {
+                                 entity: ['Book', function(Book) {
+                                          return Book.get({id : $stateParams.id});
+                                          }]
+                                 }
+                                 }).result.then(function() {
+                                                $state.go('book', null, { reload: true });
+                                                }, function() {
+                                                $state.go('^');
+                                                });
+                  }]
+        })
         .state('book.delete', {
             parent: 'book',
             url: '/{id}/delete',
             data: {
-                authorities: ['ROLE_USER']
+                authorities: ['ROLE_ADMIN']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({
