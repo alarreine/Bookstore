@@ -46,6 +46,16 @@ spring:
             ssl.trust: smtp.gmail.com
     thymeleaf:
         cache: true
+    social:
+        google:
+            client-Id: 419306594365-mv8vojj48jvf057vlg0lqch5kd405t5o.apps.googleusercontent.com
+            client-Secret: ABZxk9ZYWu2g-wjWqbgmOA-G
+        facebook:
+            client-Id: 264332287348638
+            client-Secret: 80138b5e677b6e061c0a899745268411
+        twitter:
+            client-Id: l24kSUlguwMM0tDvXGB5LfQgL
+            client-Secret: 7QMXkvSAdISinIm0ZQ896TmoLUK4xEGpa6RyMppt2oJXb57QB6
 
 liquibase:
     contexts: prod
@@ -91,7 +101,7 @@ jhipster:
             key: 2489e01a5a8d47ee0d19ff5ad36ef8cbe948494f
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: idsprojet@gmail.com
-        base-url: http://104.199.24.10:8080 # Modify according to your server's URL
+        base-url: http://35.187.50.205:8080 # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:

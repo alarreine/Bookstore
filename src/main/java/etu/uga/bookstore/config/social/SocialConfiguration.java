@@ -66,6 +66,8 @@ public class SocialConfiguration implements SocialConfigurer {
         // Google configuration
         String googleClientId = environment.getProperty("spring.social.google.client-id");
         String googleClientSecret = environment.getProperty("spring.social.google.client-secret");
+        log.debug(googleClientId);
+        log.debug(googleClientSecret);
         if (googleClientId != null && googleClientSecret != null) {
             log.debug("Configuring GoogleConnectionFactory");
             connectionFactoryConfigurer.addConnectionFactory(
