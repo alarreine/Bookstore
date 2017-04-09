@@ -101,7 +101,7 @@ jhipster:
             key: 2489e01a5a8d47ee0d19ff5ad36ef8cbe948494f
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: idsprojet@gmail.com
-        base-url: http://35.187.50.205:8080 # Modify according to your server's URL
+        base-url: http://146.148.16.162:8080 # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:
