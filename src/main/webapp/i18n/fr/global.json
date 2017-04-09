@@ -9,8 +9,8 @@
                 "main": "Menu",
                 "author": "Author",
                 "book": "Livre",
-                "cart": "Panier",
-                "cartToBooks": "Cart To Books",
+                "cart": "Gestion des paniers",
+                "cartToBooks": "Mon Panier",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -92,7 +92,8 @@
             "delete": "Supprimer",
             "open": "Ouvrir",
             "save": "Sauvegarder",
-            "view": "Voir"
+            "view": "Voir",
+            "addToCart": "Ajouter au Panier"
         },
         "detail": {
             "field": "Champs",

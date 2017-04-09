@@ -1,9 +1,9 @@
 {
     "home": {
-        "title": "BookStore IDS !",
-        "subtitle": "Ceci est votre page d'accueil",
+        "title": "IDS Book Store!",
+        "subtitle": "",
         "logged": {
-            "message": "Vous êtes connecté en tant que \"{{username}}\"."
+            "message": "Bienvenue \"{{username}}\"."
         },
         "question": "Si vous avez des questions à propos de JHipster :",
         "link": {
