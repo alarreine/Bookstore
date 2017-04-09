@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: bookstore-app
-        image: alarreine/bookstore:v4
+        image: alarreine/bookstore:v6
         imagePullPolicy: IfNotPresent
         env:
         - name: SPRING_PROFILES_ACTIVE
