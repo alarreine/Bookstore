@@ -36,7 +36,7 @@ spring:
     mail:
         host: smtp.gmail.com
         port: 587
-        username: idsprojet@gmail.com  #Replace this field with your Gmail username.
+        username: idsprojet2017@gmail.com  #Replace this field with your Gmail username.
         password: idsprojet357753           #Replace this field with your Gmail password.
         protocol: smtp
         tls: true
