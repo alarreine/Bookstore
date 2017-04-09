@@ -3,8 +3,8 @@
         "cart" : {
             "home": {
                 "title": "Carts",
-                "createLabel": "Create a new Cart",
-                "createOrEditLabel": "Create or edit a Cart"
+                "createLabel": "Add a new Cart",
+                "createOrEditLabel": "Add or edit a Cart"
             },
             "created": "A new Cart is created with identifier {{ param }}",
             "updated": "A Cart is updated with identifier {{ param }}",

@@ -3,8 +3,8 @@
         "book" : {
             "home": {
                 "title": "Books",
-                "createLabel": "Create a new Book",
-                "createOrEditLabel": "Create or edit a Book",
+                "createLabel": "Add a new Book",
+                "createOrEditLabel": "Add or edit a Book",
                 "addToCartLabel": "Successfully added to cart"
             },
             "created": "A new Book is created with identifier {{ param }}",

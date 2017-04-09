@@ -3,8 +3,8 @@
         "book" : {
             "home": {
                 "title": "Books",
-                "createLabel": "Créer un nouveau Book",
-                "createOrEditLabel": "Créer ou éditer un Book"
+                "createLabel": "Ajouter un nouveau Book",
+                "createOrEditLabel": "Ajouter ou éditer un Book"
             },
             "created": "Un nouveau Book a été créé avec l'identifiant {{ param }}",
             "updated": "Le Book avec l'identifiant {{ param }} a été mis à jour",

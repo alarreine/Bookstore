@@ -34,10 +34,16 @@ spring:
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: false
     mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+        host: smtp.gmail.com
+        port: 587
+        username: idsprojet@gmail.com  #Replace this field with your Gmail username.
+        password: idsprojet357753           #Replace this field with your Gmail password.
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     thymeleaf:
         cache: true
 
@@ -84,8 +90,8 @@ jhipster:
             # security key (this key should be unique for your application, and kept secret)
             key: 2489e01a5a8d47ee0d19ff5ad36ef8cbe948494f
     mail: # specific JHipster mail property, for standard properties see MailProperties
-        from: Bookstore@localhost
-        base-url: http://my-server-url-to-change # Modify according to your server's URL
+        from: idsprojet@gmail.com
+        base-url: http://104.199.24.10:8080 # Modify according to your server's URL
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite:

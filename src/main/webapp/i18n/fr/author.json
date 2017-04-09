@@ -3,8 +3,8 @@
         "author" : {
             "home": {
                 "title": "Authors",
-                "createLabel": "Créer un nouveau Author",
-                "createOrEditLabel": "Créer ou éditer un Author"
+                "createLabel": "Ajouter un nouveau Author",
+                "createOrEditLabel": "Ajouter ou éditer un Author"
             },
             "created": "Un nouveau Author a été créé avec l'identifiant {{ param }}",
             "updated": "Le Author avec l'identifiant {{ param }} a été mis à jour",
