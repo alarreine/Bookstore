@@ -20,7 +20,7 @@ Book Store using Google App Engine}
 \author{LARREINEGABE Gerardo \\
 RATNAPARKHI Gaurang \\
 PERPETUA Patricio}
-\date{9/04/2017}
+\date{10/04/2017}
 
 
 \begin{document}
@@ -46,13 +46,13 @@ PERPETUA Patricio}
     \item Node.js (\url{https://nodejs.org/en/about/})
 \end{itemize}
 \subsection{Yeoman}
-It is a generator ecosystem which it help us to proscribing best practices and tools to stay productive.
+It is a generator ecosystem which helps us proscribing best practices and tools to stay productive.
 The workflow that it provides is a client-side stack, comprising tools and frameworks that can help quickly build web applications.
 \subsection{Node}
-Node.js is an event driven and therefore asynchronous I / O runtime library and environment that runs on the JavaScript interpreter created by Google V8. The truth is that it is very fashionable but not something new since there are libraries like Twisted that do exactly the same but if it is true that is the first based on JavaScript and has a great performance
+Node.js is an event driven and therefore asynchronous I/O runtime library and environment that runs on the JavaScript interpreter created by Google V8. The truth is that it is very fashionable but not something new since there are libraries like Twisted that do exactly the same but if it is true that is the first based on JavaScript and has a great performance
 
 \section{Logic}
-The basic idea was to create a web application using JHipster and then deploy it on the Google Container engine using Kubernetes. The Google Cloud SQL was used as MySql backend.
+The basic idea was to create a web application using JHipster and then deploy it on the Google Container engine using Kubernetes. The Google Cloud SQL was used as Postgresql database.
 
 \subsection{Why JHipster?}
 JHipster uses the following Client Side (Front end) technologies
@@ -62,15 +62,15 @@ Maven, Spring, Spring MVC REST, Spring data jpa.
 It uses a ‘monolithic architecture’ which contains both front-end and back-end code.
 It basically creates a decent architecture for the type of entities we want.
 
-\subsection{Step-by-Step}
-\subsection{Application}
+\subsection{Step-by-Step Implementation}
+\subsubsection{Application}
 \begin{itemize}
 \item Create the environment on the local machine.
 \item Create the structure of our application
 \item Write logic for database entry and changes for UI.
 \end{itemize}
 
-\subsection{Docker and Kubernetes}
+\subsubsection{Docker and Kubernetes}
 
 Following were the steps to deploy the web application \cite{docker}\cite{kubernetes}.
 
@@ -111,7 +111,7 @@ kubectl get services
 
 \section{Architecture}
 \subsection{Google Container}
-The architecture of Google Container with Kubernetes Figure \ref{fig:googlecontainer}.
+The architecture of Google Container with Kubernetes Figure.
 
 
 \subsection{Bookstore}
@@ -126,7 +126,7 @@ Figure \ref{fig:bookstore}.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.5\textwidth]{bookstore.png}
+\includegraphics[width=0.8\textwidth]{bookstore.png}
 \caption{\label{fig:bookstore}Architecture Bookstore.}
 \end{figure}
 
