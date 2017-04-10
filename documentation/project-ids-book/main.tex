@@ -14,6 +14,7 @@
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{hyperref}
 \usepackage{enumerate}
+\usepackage{listings}
 
 \title{Project IDS \\
 Book Store using Google App Engine}
@@ -75,60 +76,118 @@ It basically creates a decent architecture for the type of entities we want.
 Following were the steps to deploy the web application \cite{docker}\cite{kubernetes}.
 
 \begin{itemize}
-    \item Create Google Cloud Project and set the project as default\\
-    gcloud config set project bookstoreids
-    \item Create a Google SQL Instance\\
-    gcloud beta sql instances create bookstoresql --region=europe-west1 --tier=db-f1-micro\
- --authorized-networks=`curl -s ifconfig.co` --backup-start-time=01:00 --enable-bin-log \
- --activation-policy=ALWAYS --storage-type=HDD --storage-size=10GB
-    \item Create a Container Cluster\\
-    gcloud container clusters create bookstore-1 --zone=europe-west1-b --machine-type=g1-small --num-nodes=3
-    \item Get the credentials for kubectl
-    gcloud container clusters get-credentials bookstore-1
-    \item Build and push a docker image \\ 
-    docker image tag bookstore alarreine/bookstore:v1 \\
-    It is better to add a version\\
-    gcloud docker -- push bookstore alarreine/bookstore:v1
-    \item Create Credentials to use Cloud SQL Proxy\\
-    gcloud iam service-accounts create bookstore-app --display-name="Bookstore App"
-    \item Get access to the service account
-    gcloud projects add-iam-policy-binding bookstoreids \
- --member serviceAccount:service@created.com \
+\item Create Google Cloud Project and set the project as default
+\begin{lstlisting}[language=bash]
+gcloud config set project bookstoreids
+\end{lstlisting}
+
+\item Create a Google SQL Instance
+\begin{lstlisting}[language=bash]
+gcloud beta sql instances create bookstoresql 
+--region=europe-west1 --tier=db-f1-micro 
+--authorized-networks=`curl -s ifconfig.co` 
+--backup-start-time=01:00 --enable-bin-log 
+--activation-policy=ALWAYS --storage-type=HDD 
+--storage-size=10GB
+\end{lstlisting}
+\item Create a Container Cluster
+\begin{lstlisting}[language=bash]
+gcloud container clusters create bookstore-1 
+--zone=europe-west1-b --machine-type=g1-small --num-nodes=3
+\end{lstlisting}
+\item Get the credentials for kubectl
+\begin{lstlisting}[language=bash]
+gcloud container clusters get-credentials bookstore-1
+\end{lstlisting}
+\item Build and push a docker image
+\begin{lstlisting}[language=bash]
+docker image tag bookstore alarreine/bookstore:v1
+\end{lstlisting}
+It is better to add a version
+\begin{lstlisting}[language=bash]
+gcloud docker -- push bookstore alarreine/bookstore:v1
+\end{lstlisting}
+\item Create Credentials to use Cloud SQL Proxy
+\begin{lstlisting}[language=bash]
+gcloud iam service-accounts create bookstore-app 
+--display-name="Bookstore App"
+\end{lstlisting}    
+\item Get access to the service account
+\begin{lstlisting}[language=bash]
+gcloud projects add-iam-policy-binding bookstoreids 
+ --member serviceAccount:service@created.com 
  --role roles/editor
- \item Create the key to use the proxy\\
- gcloud iam service-accounts keys create \
+\end{lstlisting}
+\item Create the key to use the proxy
+\begin{lstlisting}[language=bash]
+gcloud iam service-accounts keys create
 --iam-account service@created.com aplication-credentials.json
- \item Add this key to the cluster Kubernetes\\
- kubectl create secret generic cloudsql-oauth-credentials --from-file=credentials.json=aplication-credentials.json
- \item Add this credential to the pod file \cite{containersql}
-\item Deploy the cluster \\
+\end{lstlisting}
+\item Add this key to the cluster Kubernetes
+\begin{lstlisting}[language=bash]
+kubectl create secret generic cloudsql-oauth-credentials 
+--from-file=credentials.json=aplication-credentials.json
+\end{lstlisting}
+
+\item Add this credential to the pod file \cite{containersql}
+\item Deploy the cluster
+\begin{lstlisting}[language=bash]
 kubectl apply -f bookstore
-\item Get the external IP \\
+\end{lstlisting}
+
+\item Get the external IP
+\begin{lstlisting}[language=bash]
 kubectl get services
- 
+\end{lstlisting}
+
 \end{itemize}
 
 
 \section{Architecture}
 \subsection{Google Container}
-The architecture of Google Container with Kubernetes Figure.
+The architecture of Google Container with Kubernetes Figure \ref{fig:computeengine}.
 
-
-\subsection{Bookstore}
-The architecture of Bookstore is 
-Figure \ref{fig:bookstore}.
-
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{grapheComputeEngine.png}
-\caption{\label{fig:bookstore}Compute Engine.\cite{omerdawelbeit}}
+\caption{\label{fig:computeengine}Compute Engine.\cite{omerdawelbeit}}
 \end{figure}
 
-\begin{figure}
+\subsection{Bookstore}
+The architecture of Bookstore is show the Figure \ref{fig:bookstore} shows.\par
+\begin{figure}[!h]
 \centering
-\includegraphics[width=0.8\textwidth]{bookstore.png}
+\includegraphics[width=0.5\textwidth]{bookstore.png}
 \caption{\label{fig:bookstore}Architecture Bookstore.}
 \end{figure}
+We can see all the layers like:
+\begin{itemize}
+\item Bookstore-1: which is a computer container with 3 nodes.
+\item Bookstore-app: which is a Identity Access to authorize who can use our resource.
+\item Bookstoresql: which is the instance of Postgresql database.
+
+\end{itemize}
+
+Google Container uses Kubernetes to manage the container \cite{gcontainer} and the command \textit{kubectl} Figure \ref{fig:kubectl}. is a command line interface for running commands against Kubernetes clusters.\par
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.5\textwidth]{kubectl.jpg}
+\caption{\label{fig:kubectl}Kubernetes command.\cite{kubectl}}
+\end{figure}
+
+
+We have created a service for our application which has proxy which use \textit{Bookstore-app} to get access to the \textit{Booktoresql}.\par
+
+\subsection{Our implementation vs App Engine}
+They are basically the same. One provides a custom configuration and other does not.\par
+
+App Engine is a Platform-as-a-Service (PaaS). It means that you simply deploy your code, and the platform does everything else for you; create instance, increase volumes if necessary, etc \cite{gap}.\par
+
+Compute Engine is an Infrastructure-as-a-Service. You have to create and configure your own virtual machine instances. It gives you more flexibility and generally costs much less than App Engine. The drawback is that you have to manage your app and virtual machines yourself.\par
+
+Container Engine is another level above Compute Engine, i.e. it's cluster of several Compute Engine instances which can be centrally managed. \cite{gcontainer}\par
+
 
 \bibliographystyle{alpha}
 \bibliography{sample}
