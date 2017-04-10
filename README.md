@@ -14,6 +14,8 @@ For modify and build this application you have to install:
 
     npm install -g bower
 
+2. Postgresql Database
+   For development, you have to install Postgresql and create a database called "Bookstore"
 
 ## Building for production
 
@@ -28,7 +30,7 @@ To ensure everything worked, run:
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
---Credits--
+## Credits
 
 [JHipster Homepage]: https://jhipster.github.io
 
